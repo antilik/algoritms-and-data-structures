@@ -15,26 +15,23 @@
 //       '#####'
 
 function pyramid(n) {
-  let countChar = 0;
+  let countChar = 1;
   const width = n * 2 - 1;
   const printMiddle = (count) => "#".repeat(count);
-  const diffStart = (char) =>
-    width - char.length ? (width - char.length) / 2 + char.length : 0; // (5 - 1)/2 = 2
+  const diffStart = (charLength) =>
+    width - charLength ? (width - charLength) / 2 + charLength : 0; // (5 - 1)/2 = 2
   const printStart = (specialChars) =>
-    specialChars.padStart(diffStart(specialChars));
-  const printEnd = (chars) => chars.padEnd(width);
+    specialChars.padStart(diffStart(specialChars.length));
+  const printEnd = (startMiddle) => startMiddle.padEnd(width);
 
   for (let i = 0; i < n; i++) {
-    if (i === 0) {
-      countChar += 1;
-    } else {
+    if (i > 0) {
       countChar += 2;
     }
-
     const middle = printMiddle(countChar);
-    const beginning = printStart(middle);
-    const end = printEnd(beginning);
-    console.log(end);
+    const beginningMiddle = printStart(middle);
+    const allRow = printEnd(beginningMiddle);
+    console.log(allRow);
   }
 }
 
