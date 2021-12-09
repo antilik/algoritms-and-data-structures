@@ -54,7 +54,7 @@ function pyramid(n) {
   const width = n*2 -1;
   let counter = 1;
 
-  function printRow() {
+  const printRow = () => {
     const middle = counter*2 -1;
     const halfOfEmptySpace = Math.floor((width - middle)/2);
     const halfOfEmptySpaceSymbols = (middle === width) ? "" : " ".repeat(halfOfEmptySpace);
@@ -65,9 +65,8 @@ function pyramid(n) {
       counter +=1;
       printRow()
     }
-  }
+  };
   (n >0 ) && printRow();
 }
-
 
 module.exports = pyramid;
