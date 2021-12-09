@@ -15,5 +15,8 @@
     "Data structures"
   ],
   "author": "Anton Degnera <anton.degnera@gmail.com>",
-  "license": "ISC"
+  "license": "ISC",
+  "dependencies": {
+    "jest": "^27.4.3"
+  }
 }
